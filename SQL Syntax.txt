@@ -1,0 +1,205 @@
+What is SQL?
+    SQL Agenda->
+        1. Definition
+        2. Types of a database
+        3. Installation
+        4. Database Design and DeveloPment ConcePts
+        5. Creating Database
+            - Naming Convention.
+            - Create table.
+            - Define columns.
+            - Normalize tables.
+            - Define Data tayPe.
+            - Define keys.
+    SQL Languages->
+        DDL(Data Definition languages)
+            . CREATE- is used to create the database or it's objects (like table, index, function, views, store Procedure and triggers)
+            . DROP- is used to delete objects from the database.
+            . ALTER- is used to alter the structure of thr database.
+            . TRUNCATE- is used to remove all records from a table, including all sPaces allocated for the records are removed.
+            . COMMENT- is used to add comment to the data dictionary.
+            . RENAME- is used to rename an objects existing in the database.
+        DQL(Data Query Language)
+            . SELECT- is used to insert retrieve data from the a database.
+        DML(Data ManiPulation Language)
+            . INSERT- is used to insert data into table.
+            . UPDATE- is used to uPdate existing data within a table.
+            . DELETE- is used to delete records from a database table.
+        DCL(Data Control Language)
+            . GRANT- gives user's access Privileges to database.
+            . REVOKE- withdraw user's access Privileges given by using the GRANT command.
+        TCL(Transaction Control Language):TCL commands deals with the transaction within the database.
+            . COMMIT- commits a Transaction.
+            . ROLLBACK- rollback a transaction in case og any error occurs.
+            . SAVE POINT- sets a save Point within a transaction.
+            . SET TRANSACTION- sPecify characteristics for the transaction.
+                    - Join
+                    - OPerators- Arithmetic
+                               - Relation
+                               - Logical
+                    - Conjunction- UNION
+                                 - UNION ALL
+                                 - IN
+                                 - LIKE
+                                 - BETWEEN
+                    - Views
+                    - Procedures
+                    - Functions- Table valued
+                               - Scaler
+                               - Aggregate
+                                                    - Avg()
+                                                    - Count()
+                                                    - Max()
+                                                    - Min()
+                                                    - Sum()
+                                                    - UPPER()
+                                                    - Lower()
+                                                    - Len()
+                                                    - Round()
+                    - TyPes of Tables- Tables Variable.
+                                     - TemPorary table.
+                                     - CTE.
+                    - Sub queries
+                    - Transaction
+                    - Error handling
+                    - Indexes
+                    - String ManuPliation
+                    - TyPe of conversion
+                    - Triggers.
+
+    SQL is a standard language for 
+            Storing
+            ManiPulating &
+            Retrieving data oin database.
+    SQL stands from Structured Query Language.
+What can SQL do?
+    SQL can execute queries against a database
+    SQL can retrieve data from database
+    SQL can insert records in a database
+    SQL can uPdate records in a database
+    SQL can delete records from a database
+    SQL can be create a new database
+    SQL can be create tables in a database
+    SQL can be views in a database.
+
+What is database->
+                - any collection of related data/information.
+
+SQL CREATE DATABASE STATEMENT
+    The CREATE DATABASE statement is used to create a new SQL database.
+        SYNTAX->
+            CREATE DATABASE database_name;
+SQL DROP TABLE STATEMENT
+    The DROP TABLE statement is used to droP an existing table in a database.
+        SYNTAX->
+            DROP TABLE table_name;
+SQL ALTER TABLE STATEMENT
+    The ALTER TABLE statement is used to add, delete or modify columns in an existing table.
+        SYNTAX -> ADD columns
+            ALTER TABLE table_name
+            ADD column_name datatyPe;
+        SYNTAX -> DRO columns
+            ALTER TABLE table_name
+            DROP column column_name;
+        SYNTAX -> MODIFY column
+            ALTER TABLE table_name
+            MODIFY column column_name datatyPe;
+SQL Constraints
+    SQL Constraints are used to sPecify rules for data in a table.
+        SYNTAX -> 
+            CREATE TABLE table_name(
+                column1 datatyPe constraint,
+                column2 datatyPe constraint,
+                column3 datatyPe constraint,
+                ...........
+            );
+    Some of the constraints are
+        NOT->
+            Ensures that a column can't have null values.
+        UNIQUE->
+            Ensures that all values in a column are different.
+        PRIMARY KEY->
+            A combination of a Not Null & unique, uniquely identifies each row in a table.
+        FORE KEY->
+            Uniquely identifies a row/record in another table.
+SQL INSERT INTO statement
+    The insert into statement is used to insert new records in a table.
+        SYNTAX->
+            INSERT INTO table_name(column1, column2, column3,.........)
+            values(value1, value2, value3,........);
+SQL SELECT statement
+    The SELECT statement is used to select data from database.
+        SYNTAX SELECT statement->
+            SELECT column1, column2, column3,........ 
+            FROM table_name;
+    The SELECT DISTINCT statement is used to return only distinct(different) values.
+        SYNTAX->
+            SELECT DISTINCT column1, DISTINCT column2,........
+            FROM table_name;
+SQL UPDATE statement
+    The UPDATE statement is used to modify the existing records in table.
+        SYNTAX table_name
+        SET column1 = value1, column2 = value2,.......
+        WHERE condition;
+SQL DELETE statement
+    The DELETE statement is used to delete the existing records in table.
+        SYNTAX->
+            DELETE FROM table_name WHERE condition;
+SQL AND, OR & NOT OPerators.
+    AND
+        The AND oPerators disPlay  a record if all the conditions seParated by AND are TRUE.
+    OR
+        The OR oPerators disPlay  a record if any the conditions seParated by OR are TRUE.
+    NOT
+        The NOT oPerators disPlay  a record if the conditions(s) is NOT TRUE.
+            SYNTAX AND, OR NOT->
+                SELECT column1, column2,...
+                FROM table_name
+                WHERE condition1 And condition2 OR condition3;
+SQL IN OPerators
+    The In operator is used to specify multiple value in a where clause.
+    The In operator shorthand for multiple OR condition.
+        SYNTAX->
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name IN (value1, value2, value3,.....);
+SQL BETWEEN operator
+    The BETWEEN operator select values within a given range. The values can be numbers, text or dates.
+        SYNTAX-> 
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name BETWEEN Value1 AND value2;
+SQL LIKE operator
+    The LIKE operator is used in a WHERE clause to search for a specify pattern in a column.
+        There are two wildcards:
+            1. % -represents zero, one or multiple characters.
+            2. _ -represents a single characters.
+                SYNTAX->
+                    SELECT column1, column2,......
+                    FROM table_name
+                    WHERE columnN LIKE pattern;
+SQL UNION operator
+    The UNION operator is used in a combine the result-set of two or more SELECT statement.
+        SYNTAX->
+            SELECT column_names
+            FROM table1
+            UNION SELECT column_names FROM table2;
+SQL INSERT INTO SELECT statement
+    The INSERT INTO SELECT statement is used coPies data from one table and inserts it into another table.
+    INSERT INTO SELECT requires that data tyPes in source and target tables match.
+        SYNTAX->
+            INSERT INTO table2
+            SELECT * 
+            FROM table1
+            WHERE condition;
+SQL MIN(), MAX(), COUNT(), AVG() & SUM() functions
+    SYNTAX->MIN()
+        SELECT MIN/MAX/COUNT/AVG/SUM(column_name)
+        FROM table_name
+        WHERE condition;
+SQL ORDER BY Keyword
+    The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+        SYNTAX->
+            SELECT column1, column2,......
+            FROM table_name
+            ORDER BY column1, column2,.......ASC|DESC;
